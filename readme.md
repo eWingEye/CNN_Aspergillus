@@ -1,7 +1,5 @@
 # CNN_Aspergillus UserGuide
 
-@(User Guide to CNN_Aspergillus )[Anaconda|Tensorflow2]
-
 **CNN_Aspergillus** ：
  CNN_ Mold is a very preliminary attempt,  it uses CNN method to identify Aspergillus .
 This project consist of a trained Xception model and example pictures captured by dissecting microscopy, which was used to classify various Aspergillus species. (Aspergillus fumigatus A293, Aspergillus. nidulans TN02A7, Aspergillus flavus-AI1; Aspergillus niger-AI1, Aspergillus terreus-AI1, Aspergillus flavus-AI2, and Aspergillus clavatus-AI1) in a study. 
@@ -14,11 +12,9 @@ You can use all data from this project for free.
 - **Tensoflow2** ：Tensorflow2 was used as the engine for CNN training and validation. 
 There are multiple changes in TensorFlow2 to make TensorFlow users more productive. TensorFlow 2 removes redundant APIs, makes APIs more consistent (Unified RNNs, Unified Optimizers), and better integrates with the Python runtime with Eager execution.
 Many RFCs have explained the changes that have gone into making TensorFlow2. This guide presents a vision for what development in TensorFlow 2 should look like. It's assumed you have some familiarity with TensorFlow 1.x.
-Please install TensorFlow other than TensorFlow1 for using CNN_Aspergillus .
+Please install TensorFlow2 other than TensorFlow1 for using CNN_Aspergillus .
 
 -------------------
-
-[TOC]
 
 
 ###Download dataset and codes
@@ -42,20 +38,18 @@ source activate CNN_Aspergillus
 ```
 ### Train the model
 ```
-training.py -
+training.py
+
+```
+### Validation the trained model
+``` 
+evaluate.py
+
 ```
 
 ### Recognition for a specific Aspergillus  picture
 ``` 
-
-... 
+predict.py "picture file name"
 ```
-### table of the picture amount for each mold from the dataset 
 
-| set|   count of mold1| count of mold1|count of mold1|count of mold1|count of mold1|
-| :-------- | :--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|
-| traing_set|  5   |
-| test_set|12 USD |  12  |
-| validation_set|    1 USD | 234  |
-
-
+###
