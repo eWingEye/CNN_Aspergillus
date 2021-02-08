@@ -38,18 +38,18 @@ source activate CNN_Aspergillus
 ```
 ### Train the model
 ```
-training.py
+python training.py
 
 ```
 ### Validation the trained model
 ``` 
-evaluate.py
+python evaluate.py
 
 ```
 
 ### Recognition for a specific Aspergillus  picture
 ``` 
-predict.py "picture file name"
+python  predict.py demo.jpg
 ```
 
 ###
