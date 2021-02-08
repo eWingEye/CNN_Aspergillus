@@ -14,7 +14,7 @@ import os
 keras = tf.keras
 layers = tf.keras.layers
 
-train_image_path = glob.glob('D:/model/7-YAG-35/train/*/*.jpg')
+train_image_path = glob.glob('./training/*/*.jpg')
 train_image_label = [int(p.split('\\')[1].split('-')[0]) for p in train_image_path]
 
 def load_preprosess_image(path, label):
@@ -37,7 +37,7 @@ train_count = len(train_image_path)
 train_image_ds = train_image_ds.shuffle(train_count).batch(BATCH_SIZE)
 
 
-test_image_path = glob.glob('D:/model/7-YAG-35/test/*/*.jpg')
+test_image_path = glob.glob('./test set/*/*.jpg')
 test_image_label = [int(p.split('\\')[1].split('-')[0]) for p in test_image_path]
 test_image_ds = tf.data.Dataset.from_tensor_slices((test_image_path, test_image_label))
 test_image_ds = test_image_ds.map(load_preprosess_image, num_parallel_calls=AUTOTUNE)
