@@ -29,7 +29,7 @@ def load_preprosess_image(path, label):
 AUTOTUNE = tf.data.experimental.AUTOTUNE
 BATCH_SIZE = 20
 
-test_image_path = glob.glob('D:/model/xcp-test(已切割)/valida/*/*.jpg')
+test_image_path = glob.glob('./dataset/ValidationSet/*/*.jpg')
 
 test_image_label = [int(p.split('\\')[1].split('-')[0]) for p in test_image_path]
 test_image_ds = tf.data.Dataset.from_tensor_slices((test_image_path, test_image_label))
@@ -52,6 +52,14 @@ model.compile(loss='sparse_categorical_crossentropy',
               metrics=['accuracy'])
 
 
-model.load_weights('Xcp_weights.h5')
+model.load_weights('Xception_weights.h5')
 
-model.evaluate(test_image_ds,verbose=0)
+output = model.evaluate(test_image_ds,verbose=0)
+
+print('test loss:',output[0])
+print('accuracy:',output[1])
+
+
+
+
+

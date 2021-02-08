@@ -29,11 +29,10 @@ model.compile(loss='sparse_categorical_crossentropy',
               optimizer=tf.keras.optimizers.Adam(lr=0.001),
               metrics=['accuracy'])
 
-model.load_weights('Xcp_weights.h5')
+model.load_weights('Xception_weights.h5')
 
 
-img_path = 'C:/Users/Matebook/Desktop/示例/2-A. flavus/1 (286).jpg'
-
+img_path = './demo.jpg'
 
 image = tf.io.read_file(img_path)
 image = tf.image.decode_jpeg(image, channels=3)
@@ -50,7 +49,36 @@ pre_list = np.array(pre_list)
 classes = model.predict_classes(pre_list)
 proba = model.predict_proba(pre_list)
 
+print('The probability that the input image belongs to each label:')
+print('Probability(label = [0]):',format(proba[0][0],'.2f'))
+print('Probability(label = [1]):',format(proba[0][1],'.2f'))
+print('Probability(label = [2]):',format(proba[0][2],'.2f'))
+print('Probability(label = [3]):',format(proba[0][3],'.2f'))
+print('Probability(label = [4]):',format(proba[0][4],'.2f'))
+print('Probability(label = [5]):',format(proba[0][5],'.2f'))
+print('Probability(label = [6]):',format(proba[0][6],'.2f'),'\n')
+print('the Predictive label of input:',classes)
 
-print(proba)
-print(classes)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

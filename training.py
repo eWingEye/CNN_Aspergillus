@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Created on Fri Feb  5 20:57:44 2021
+Created on Mon Feb  8 14:32:29 2021
 
 @author: lnln2
 """
@@ -14,7 +14,8 @@ import os
 keras = tf.keras
 layers = tf.keras.layers
 
-train_image_path = glob.glob('./training/*/*.jpg')
+
+train_image_path = glob.glob('./dataset/training/*/*.jpg')
 train_image_label = [int(p.split('\\')[1].split('-')[0]) for p in train_image_path]
 
 def load_preprosess_image(path, label):
@@ -37,7 +38,8 @@ train_count = len(train_image_path)
 train_image_ds = train_image_ds.shuffle(train_count).batch(BATCH_SIZE)
 
 
-test_image_path = glob.glob('./test set/*/*.jpg')
+test_image_path = glob.glob('./dataset/test set/*/*.jpg')
+
 test_image_label = [int(p.split('\\')[1].split('-')[0]) for p in test_image_path]
 test_image_ds = tf.data.Dataset.from_tensor_slices((test_image_path, test_image_label))
 test_image_ds = test_image_ds.map(load_preprosess_image, num_parallel_calls=AUTOTUNE)
@@ -58,7 +60,6 @@ model.add(covn_base)
 model.add(layers.Dense(512,activation='relu'))
 model.add(layers.Dropout(0.3))
 model.add(layers.Dense(7,activation='softmax'))
-
 
 model.compile(loss='sparse_categorical_crossentropy',
               optimizer=tf.keras.optimizers.Adam(lr=0.0001),
