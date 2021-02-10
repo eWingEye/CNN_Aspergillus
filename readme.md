@@ -49,7 +49,7 @@ python evaluate.py
 
 ### Recognition for a specific Aspergillus  picture
 ``` 
-python  predict.py demo.jpg
+python  predict.py
 ```
 
 ###
