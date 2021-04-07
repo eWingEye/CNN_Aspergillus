@@ -1,5 +1,7 @@
 # CNN_Aspergillus UserGuide
 
+Read our literature from https://link.springer.com/article/10.1007/s12275-021-1013-z
+
 **CNN_Aspergillus** ：
  CNN_ Mold is a very preliminary attempt,  it uses CNN method to identify Aspergillus .
 This project consist of a trained Xception model and example pictures captured by dissecting microscopy, which was used to classify various Aspergillus species. (Aspergillus fumigatus A293, Aspergillus. nidulans TN02A7, Aspergillus flavus-AI1; Aspergillus niger-AI1, Aspergillus terreus-AI1, Aspergillus flavus-AI2, and Aspergillus clavatus-AI1) in a study. 
